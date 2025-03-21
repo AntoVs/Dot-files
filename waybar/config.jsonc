@@ -1,0 +1,138 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 0,
+
+    "margin-top": 4,
+    "margin-right": 4,
+    "margin-bottom": 0,
+    "margin-left": 4,
+
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "tray",
+        "custom/wayves",
+        "backlight",
+        "cpu",
+        "memory",
+        "network",
+        "pulseaudio",
+        "battery"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "tooltip": false,
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        },
+        "sort-by-number": true
+    },
+
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p - %a, %d %b %Y}",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": "  {usage}%",
+        "interval": 2,
+        "states": {
+            "critical": 90
+        }
+    },
+
+	"custom/wayves": {
+	"format": "{}",
+	"exec": "python /home/anto/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
+    },
+
+    "memory": {
+        "format": "  {percentage}%",
+        "interval": 2,
+        "states": {
+            "critical": 80
+        }
+    },
+
+    "network": {
+        "format-wifi": "  {bandwidthDownBytes}",
+        "format-ethernet": "  {bandwidthDownBytes}",
+        "format-disconnected": "󰲜 ", //no network
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "nospacing": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false,
+        "format-muted": " ",
+        "format-icons": [" ", " ", " "]
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["󰃞", "󰃠"],
+        "on-scroll-down": "brightnessctl s 5%-",
+        "on-scroll-up": "brightnessctl s +5%"
+    },
+
+    "custom/arch": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "alacritty -e bash -c 'fastfetch; exec bash'"
+},
+
+
+    "battery": {
+        "interval": 2,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    }
+}
