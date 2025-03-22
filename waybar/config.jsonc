@@ -19,6 +19,7 @@
 
     "modules-right": [
         "tray",
+        "custom/colorpicker",
         "custom/wayves",
         "backlight",
         "cpu",
@@ -27,6 +28,13 @@
         "pulseaudio",
         "battery"
     ],
+
+    "custom/colorpicker": {
+    "format": " ",
+    "exec": "echo 'Color Picker'",
+    "on-click": "hyprpicker -a | wtype"
+    },
+
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -67,9 +75,9 @@
         }
     },
 
-	"custom/wayves": {
-	"format": "{}",
-	"exec": "python /home/anto/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
+    "custom/wayves": {
+        "format": "{}",
+        "exec": "python /home/anto/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
     },
 
     "memory": {
@@ -83,7 +91,7 @@
     "network": {
         "format-wifi": "  {bandwidthDownBytes}",
         "format-ethernet": "  {bandwidthDownBytes}",
-        "format-disconnected": "󰲜 ", //no network
+        "format-disconnected": "󰲜 ", 
         "interval": 5,
         "tooltip": false
     },
@@ -106,16 +114,15 @@
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         "format-icons": ["󰃞", "󰃠"],
-        "on-scroll-down": "brightnessctl s 5%-",
-        "on-scroll-up": "brightnessctl s +5%"
+        "on-scroll-down": "brightnessctl s 3%-",
+        "on-scroll-up": "brightnessctl s +3%"
     },
 
     "custom/arch": {
-    "format": " ",
-    "tooltip": false,
-    "on-click": "alacritty -e bash -c 'fastfetch; exec bash'"
-},
-
+        "format": " ",
+        "tooltip": false,
+        "on-click": "alacritty -e bash -c 'fastfetch; exec bash'"
+    },
 
     "battery": {
         "interval": 2,
